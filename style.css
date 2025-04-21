@@ -5,7 +5,7 @@
     scroll-behavior: smooth;
 }
 body{
-    font-family: sans-serif;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
  header{
@@ -34,14 +34,39 @@ box-shadow: 10px 0 8px black;
     margin-right: 10px;
     border: 2px solid transparent;
     border-radius: 10px;
-    padding: 10px;
+    
  }
  
- 
- a:hover{
-    background: red;
+ nav ul{
+   display: flex;
+   list-style: none;
+
  }
 
+ /* animation of underline in navigation starting here and end up to a:hover  */
+ 
+ nav ul li{
+   position:relative;
+   margin-right: 10px;
+ }
+
+ nav ul li a::before{
+   content:'';
+   background-color: red;
+   position:absolute;
+   bottom: -2px;
+   left: 0;
+   height:2px;
+   width:0%;
+   transition: width ease 0.4s;
+ }
+
+ nav ul li a:hover::before{
+   width: 90%;
+ }
+ nav ul li a:hover{
+   color: red;
+ }
  header h1{
     margin-left: 20px;
  }
