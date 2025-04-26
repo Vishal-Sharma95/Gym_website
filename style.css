@@ -127,6 +127,7 @@ box-shadow: 10px 0 8px black;
    width: 100%;
    gap: 50px;
    margin-top: 60px;
+  
 }
 .container2 button{
     z-index: 1;
@@ -153,13 +154,17 @@ box-shadow: 10px 0 8px black;
     border: 1px solid transparent;
     border-radius: 15px;
 }
+.highlite{
+   color: white;
+   font-size: 1.3em;
+}
 .videoback  h1{
     font-size:5.2vw;
-    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family:'pupile' ,sans-serif;
     color: #BD1F1E;
     margin-top:80px;
     text-align: center;
-   font-weight: lighter;
+   font-weight: light;
    text-transform: uppercase;
   
 }
@@ -232,8 +237,8 @@ font-weight: 700;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap:100px;
-    height: 600px;
+    gap:2rem;
+    height: 100vh;
     flex-wrap: wrap;
     width: 100vw;
  background-image: url('pexels-tima-miroshnichenko-5327533.jpg');
@@ -243,6 +248,7 @@ font-weight: 700;
   
 position: relative;
 overflow: hidden;
+overflow-wrap: break-word;
 }
 .Testimonial::before {
  content: '';
@@ -259,8 +265,8 @@ overflow: hidden;
 .box {
  position: relative;
  z-index: 1;
-
 }
+
 
 .box{
    
@@ -276,9 +282,17 @@ background-color: white;
 box-shadow: 0px 0px 10px  black;
 color: black;
 font-size: 13px;
-
-
+transition: all ease 0.3s;
 }
+.box:hover{
+   transform: translateY(-10px);
+}
+
+@media (max-width: 768px) {
+   .box {
+     width: 90%; /* almost full width on mobile */
+   }
+ }
 .upper-content{
     display: flex;
  gap: 20px;
