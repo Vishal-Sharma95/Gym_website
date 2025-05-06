@@ -123,7 +123,7 @@ box-shadow: 10px 0 8px black;
    flex-direction: column;
    justify-content: center;
    align-items: center;
-   height: 100%;
+   height: 100vh;
    width: 100%;
    gap: 50px;
    margin-top: 60px;
@@ -159,7 +159,7 @@ box-shadow: 10px 0 8px black;
    font-size: 1.3em;
 }
 .videoback  h1{
-    font-size:5.2vw;
+    font-size:99.84px;
     font-family:'pupile' ,sans-serif;
     color: #BD1F1E;
     margin-top:80px;
@@ -333,50 +333,17 @@ transition: all ease 0.3s;
  
 }
 .form{
-   
-   height: 400px;
-   width: 600px;
+   width:50vw;
+   height:100vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+iframe{
+   width:100%;
+   height: 80%;
 
 }
-.Contact form{
-    border: 2px solid transparent;
-    padding: 20px;
-    width:100%;
-    height:100%;
-    background-color:rgba(0, 0, 0, 0.229);
-    border-radius: 10px;
-    transition: all ease-in-out 0.3s;
-}
-.Contact form:hover{
-   transform: scale(1.05);
-}
-.Contact input ,.Contact-button{
-    width: 100%;
-    height:40px ;
-    font-size: 18px;  
-}
-.Contact textarea{
-    width: 100%;
-    height: 90px;
-    resize: none;
-    font-size: 18px;
-}
- .Contact-button{
-    border: 2px solid transparent;
-    border-radius:0px;
-    background-color: rgba(0, 0, 0, 0.484);
-    box-shadow: 0px 1px 10px red;
- }
- .Contact-button:hover{
-    transform: scale(1.05);
-    background-color: red;
-    color:black;
- }
- .Contact ::placeholder{
-    color: black;
-    opacity: 1;
-    text-align: center;
- }
  .contact-heading h1{
     text-align: center;
    color: red;
