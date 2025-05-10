@@ -314,88 +314,117 @@ font-weight: 700;
     border: 1px solid red;
 }
 
-.Testimonial{
+.testonomial-animation{
+    min-width: 100vw;
+    height: 80vh;
+    background-color: #f9f9f9;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap:2rem;
-    height: 100vh;
-    flex-wrap: wrap;
+    overflow-x: hidden;
+}
+.heading h2{
+    margin-bottom: 10px;
+    margin-top: 30px;
+}
+
+.testonomial{
     width: 100vw;
- background-image: url('pexels-tima-miroshnichenko-5327533.jpg');
-    background-position:center;
-    background-repeat: no-repeat;
-   background-size: cover;
-   padding: 20px;
-position: relative;
-overflow: hidden;
-overflow-wrap: break-word;
-border-bottom:2px solid red;
-}
-.Testimonial::before {
- content: '';
- position: absolute;
- top: 0;
- left: 0;
- width: 100%;
- height: 100%;
- background: inherit;
- filter: blur(2px);
- z-index: 0;
- background: rgba(0, 0, 0, 0.7);
-}
-.box {
- position: relative;
- z-index: 1;
-}
-
-
-.box{
-   font-family: 'pupile' ,sans-serif;
-    padding: 20px;
-    width: 390px;
+    height:80%;
+   
+   
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    border: 0.5px solid transparent;
-    min-height: 400px;
-background-color: white;
-box-shadow: 0px 0px 10px  black;
-color: black;
-font-size: 13px;
-transition: all ease 0.3s;
-}
-.box:hover{
-   transform: translateY(-10px);
-}
-
-@media (max-width: 768px) {
-   .box {
-     width: 90%; 
-   }
- }
-.upper-content{
-    display: flex;
- gap: 20px;
- align-items: center;
+    align-items:center;
    
 }
+@keyframes card-animation{
+    0%{
+        transform: translateX(0%);
+    }
+    30%{
+        transform: translateX(0%);
+    }
+    35%{
+        transform: translateX(-100%);
+    }
+    60%{
+        transform: translateX(-100%);
+    }
+    66%{
+        transform: translateX(-200%);
+    }
+    95%{
+        transform: translateX(-200%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
 
-.upper-content img{
-    width: 50px;
-    height: 50px;
-    padding: 2px;
-    border: 1px solid red;
+}
+.testonomial-card{
+    min-width: 80%;
+     overflow: hidden;
+     height: 100%;
+    display: flex;
+    align-items: center;
+   
+}
+.card{
+    min-width: 100%;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     gap: 10px;
+    animation: card-animation 10s linear  infinite;
+}
+.card img{
+    width: 54px;
+    height: 54px;
     border-radius: 50%;
+    margin: 0 auto;
+    margin-bottom: 20px;
 }
-.box p{
-    font-size: 1.2em;
-    line-height: 1.5;
+.card p{
+    max-width: 40%;
+    text-align: center;
 }
-.upper-content h1{
-  
-    font-weight: lighter;
-    font-size: 25px;
+.heading h2{
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 22px;
+    color:rgb(63, 60, 60);
+}
+.heading h1{
+    font-size: 30px;
+    color: rgb(72, 69, 69);
+     font-family: sans-serif;
+}
+.card p{
+    text-align: center;
+    font-size: 18px;
+    font-family: sans-serif;
+    color: rgb(49, 48, 48);
+    font-weight: 500;
+}
+.card span{
+    
+    font-weight: 600;
+   text-align: center;
+}
+.name{
+    font-size: 22px;
+    font-family: sans-serif;
+    color: rgb(72, 69, 69);
+}
+
+.card svg{
+    fill: gold;  
+}
+@media (max-width:1032px){
+   .card p{
+      max-width: 90%;
+   }
 }
 .Contact{
    background-image: url('Untitled\ design.png');
@@ -406,12 +435,10 @@ transition: all ease 0.3s;
    width:100vw;
    color: white;
    display: flex;
+   flex-direction: row;
    justify-content: space-around;
    align-items: center;
    flex-wrap: wrap;
-
- 
- 
 }
 .form{
    width:50vw;
@@ -423,13 +450,13 @@ transition: all ease 0.3s;
 iframe{
    width:100%;
    height: 80%;
-
+   
 }
  .contact-heading h1{
     text-align: center;
    color: red;
    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
-    font-size: 3.5rem;
+    font-size:clamp(2rem, 4vw, 4rem);
     margin-bottom: 20px;
     margin-top: 10px;
  }
@@ -441,8 +468,9 @@ iframe{
     justify-content: center;
  }
  .contact-heading p{
-     font-size:1.5rem;
-     color: #D3D3D3;
+    font-size:1.5rem;
+     color:white;
+     font-family:sans-serif;
      max-width:600px;
      text-align: center;
  }
@@ -460,6 +488,21 @@ iframe{
    background-color: transparent;
   
  }
+ @media (max-width:1000px){
+   .contact-heading p{
+      font-size:1.1em;
+      letter-spacing:0.1em;
+   }
+   .Contact{
+      flex-direction: column;
+      flex-wrap: nowrap;
+   }
+   .form{
+      min-width:100vw;
+   }
+   
+ }
+
  footer{
     display: flex;
     justify-self: center;
