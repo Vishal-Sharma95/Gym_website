@@ -7,10 +7,15 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-      <img src="titlegym.png" alt="" class="title">
+   <header>
+      <img src="titlegym.png" alt="logo" loading="lazy" class="title">
+      <input type="checkbox" id="sidebar-active">
+        <label for="sidebar-active" class="open-sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" height="36" viewBox="0 -960 960 960" width="36" fill="#1f1f1f"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></label>
+       
       <nav>
         <ul>
+        <label for="sidebar-active" class="close-sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32" fill="#1f1f1f"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></label>
+        <li><a href="login.html" id="login">Login/SignUp</a></li>
           <li><a href="#">Home</a></li>
           <li><a href="#About">About Us</a></li>
           <li> <a href="#Testimonial">Review</a></li>
@@ -18,13 +23,13 @@
         </ul>
       </nav>
       <div class="login"> 
-       <a href="login.html" class="alogo" target="_blank"> <img src="mylogo.png" alt="login"></a>
-        <h2>Account</h2>
+       <a href="login.html" class="alogo" target="_blank"> <img src="mylogo.png" alt="login" loading="lazy"></a>
+        
 
       </div>
     </header>
     <section class="videoback">
-        <video   autoplay muted loop  class="bgvideo">
+        <video   autoplay muted loop  class="bgvideo" >
             <source src="conatinerback.mp4" type="video/mp4">
         </video>
        <div class="container2">
@@ -32,7 +37,8 @@
        <a href="subscription.html"><button type="button">Join Now</button></a>
        </div>
     </section>
-    <section class="About" id="About">
+   <div class="aboutus">
+     <section class="About" id="About">
        <h1>About</h1>
 
        <ul>
@@ -40,7 +46,7 @@
         <hr>
        </ul>
       
-    <h1>One-to-One Personal Training</h1>
+    <h2>One-to-One Personal Training</h2>
        <ul>
         <li>
           At <b>Titan's Arina</b>, we offer personalized one-on-one training with certified trainers to help you achieve your fitness goals. With tailored workout plans, progress monitoring, and expert guidance, we ensure you stay motivated and reach new milestones.
@@ -48,6 +54,7 @@
        </ul>
        <a href="#"><button type="button">Check</button></a>
     </section>
+   </div>
     
     <section class="Testimonial" id="Testimonial">
      
@@ -63,7 +70,7 @@
       </div>
       <div class="box">
         <div class="upper-content">
-          <img src="bohemian-man-with-his-arms-crossed.jpg" alt="image">
+          <img src="bohemian-man-with-his-arms-crossed.jpg" alt="image" loading="lazy">
           <h1> Anjali M</h1>
         </div>
         <p>Citing excellent equipment, a motivating atmosphere, and a sense of accomplishment after each visit, highly recommending it for serious fitness enthusiasts. <b>-Anjali M.</b></p>
@@ -72,7 +79,7 @@
       </div>
       <div class="box">
         <div class="upper-content">
-          <img src="good-advice-from-beautiful-woman.jpg" alt="image">
+          <img src="good-advice-from-beautiful-woman.jpg" alt="image" loading="lazy">
           <h1>Karan P</h1>
         </div>
         <p>Clean space, great crowd, and the staff really cares. They helped me with a proper diet plan along with training. My energy levels are through the roof! <b>-Karan P., Marketing Executive.</b></p>
@@ -91,9 +98,9 @@
      </div>
       <div class="social-media">
         <div class="insta">
-          <a href="https://www.instagram.com/vishal__sharma9520?utm_source=qr&igsh=MTRpcHRvY3VoNnNkMQ==" target="_blank"><img src="instagram.png" alt="instagram-image"></a>
-          <a href="tel:3565451132"><img src="telephone.png" alt="Phone-no"></a>
-          <a href="https://x.com/kanchatango?s=21"> <img src="twitter (1).png" alt="linkdeIn"></a>
+          <a href="https://www.instagram.com/vishal__sharma9520?utm_source=qr&igsh=MTRpcHRvY3VoNnNkMQ==" target="_blank"><img src="instagram.png" alt="instagram-image" loading="lazy"></a>
+          <a href="tel:3565451132"><img src="telephone.png" alt="Phone-no" loading="lazy"></a>
+          <a href="https://x.com/kanchatango?s=21"> <img src="twitter (1).png" alt="linkdeIn" loading="lazy"></a>
         </div>
   
      </div>

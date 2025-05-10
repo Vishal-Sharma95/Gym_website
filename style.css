@@ -23,11 +23,11 @@ position: fixed;
 top: 0;
 z-index: 1000;
 box-shadow: 10px 0 8px black;
-
+padding-right: 10px;
  }
  .title{
     height: 100%;
-    width: 15%;
+    min-width: 80px;
  }
  header a{
     color: white;
@@ -38,10 +38,17 @@ box-shadow: 10px 0 8px black;
     border-radius: 10px;
     
  }
+ nav{
+    display: flex;
+    flex-direction: row;
+   
  
+ }
  nav ul{
    display: flex;
    list-style: none;
+   width: 100%;
+   height: 100%;
 
  }
 
@@ -82,10 +89,7 @@ box-shadow: 10px 0 8px black;
  }
 
  .login{
-    display: flex;
-    justify-content:space-between;
-    align-items: center;
-    gap:1px;
+   margin-right: 30px;
  }
  .login .alogo:hover{
     background-color: transparent;
@@ -100,6 +104,58 @@ box-shadow: 10px 0 8px black;
    transform: scale(1.05);
  }
  
+ #sidebar-active,.open-sidebar-button,.close-sidebar-button{
+    display:none;
+ }
+ #login{
+    display: none;
+ }
+  
+ @media (max-width:790px){
+    #login{
+        display: block;
+    }
+    header img{
+        margin-right: auto;
+    }
+    .login{
+        display: none;
+    }
+    nav{
+        width: 300px;
+        height: 500px;
+        position: fixed;
+        top: 0;
+        right: 0;
+        right: -100%;
+        background-color:black;
+        box-shadow: 1px 0 10px black;
+        transition: right ease 0.35s;
+        border-radius: 10px;
+    }
+    .open-sidebar-button,.close-sidebar-button{
+    display:block;
+ }
+  .open-sidebar-button{
+   margin-right: 30px;
+  }
+ svg{
+    fill: red;
+    cursor: pointer;
+ }
+    nav ul{
+        flex-direction: column;
+        height: auto;
+       align-items: flex-start;
+       padding: 10px;
+       gap: 50px;
+       margin: 8px 10px;
+    }
+    #sidebar-active:checked ~ nav{
+        right: 0;
+    }
+  
+ }
  
 .videoback{
     height: 100vh;
@@ -126,9 +182,14 @@ box-shadow: 10px 0 8px black;
    height: 100vh;
    width: 100%;
    gap: 50px;
-   margin-top: 60px;
-  
+   position: absolute;
+   top: 50px;
+   left: 0;
+   bottom: 0;
+   right: 0;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
 }
+
 .container2 button{
     z-index: 1;
     width:250px;
@@ -159,32 +220,45 @@ box-shadow: 10px 0 8px black;
    font-size: 1.3em;
 }
 .videoback  h1{
-    font-size:99.84px;
+    font-size: clamp(3rem, 10vw, 6.25rem);
     font-family:'pupile' ,sans-serif;
     color: #BD1F1E;
     margin-top:80px;
     text-align: center;
    font-weight: light;
    text-transform: uppercase;
-  
+   width: 100vw;
+}
+@media (min-width:540px) and (max-width:1328px) {
+   container2{
+      top:30px;
+   };
 }
 
-.About{
+.aboutus{
+   display: flex;
+   width: 100vw;
+   height: 100vh;
+   align-items: center;
+   justify-content: center;
+   border-bottom:2px solid white;
+   border-top: 2px solid white;
     background-image: url('ropeback.png');
     background-position:center;
     background-repeat: no-repeat;
     background-size: cover;
-   height: 100vh;
-   width: 100vw;
+}
+.About{
+   width: 100%;
    display: flex;
    flex-direction: column;
-   gap: 25px;
+   gap: 20px;
    
 }
 .About h1{
     color: #FF0000;
     text-align: center;
-    font-size: 3.5rem;
+    font-size:clamp(2rem, 4vw, 4rem);
    padding-top: 10px;
    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
 text-transform: uppercase;
@@ -192,9 +266,16 @@ font-weight: 700;
   letter-spacing: 2px;
 
 }
+.About h2{
+   color: #FF0000;
+    font-size: clamp(1.5rem, 3vw, 3rem);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+    text-transform: uppercase;
+    text-align: center;
+}
 .About li{
     color:white;
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
     font-family: sans-serif;
     font-weight: 480;
     line-height: 1.6;
@@ -245,10 +326,11 @@ font-weight: 700;
     background-position:center;
     background-repeat: no-repeat;
    background-size: cover;
-  
+   padding: 20px;
 position: relative;
 overflow: hidden;
 overflow-wrap: break-word;
+border-bottom:2px solid red;
 }
 .Testimonial::before {
  content: '';
@@ -269,15 +351,14 @@ overflow-wrap: break-word;
 
 
 .box{
-   
+   font-family: 'pupile' ,sans-serif;
     padding: 20px;
     width: 390px;
-    height: 300px;
     display: flex;
     flex-direction: column;
     gap: 20px;
     border: 0.5px solid transparent;
-    border-radius:5px;
+    min-height: 400px;
 background-color: white;
 box-shadow: 0px 0px 10px  black;
 color: black;
@@ -290,7 +371,7 @@ transition: all ease 0.3s;
 
 @media (max-width: 768px) {
    .box {
-     width: 90%; /* almost full width on mobile */
+     width: 90%; 
    }
  }
 .upper-content{
@@ -299,11 +380,12 @@ transition: all ease 0.3s;
  align-items: center;
    
 }
+
 .upper-content img{
     width: 50px;
     height: 50px;
     padding: 2px;
-    border: 3px solid black;
+    border: 1px solid red;
     border-radius: 50%;
 }
 .box p{
@@ -314,7 +396,6 @@ transition: all ease 0.3s;
   
     font-weight: lighter;
     font-size: 25px;
-   
 }
 .Contact{
    background-image: url('Untitled\ design.png');
