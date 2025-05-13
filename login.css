@@ -46,6 +46,7 @@ form>input{
      font-size: 18px;
      padding:5px;
      outline: none;
+     text-align: center;
 }
 form>p{
     font-size:20px;

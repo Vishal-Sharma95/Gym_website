@@ -235,6 +235,77 @@ padding-right: 10px;
    };
 }
 
+ .why-choose-us {
+      padding: 80px 20px;
+      background: #111;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      width: 100vw;
+       min-height: 100vh;
+      box-sizing: border-box;
+      border-top: 2px solid white;
+    }
+
+    .why-choose-us h2 {
+      font-size: 2.8rem;
+      margin-bottom: 50px;
+      color: #fff;
+      text-shadow: 0px 1px 10px rgba(214, 42, 42, 0.8);
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      width: 100%;
+    }
+
+    .feature-card {
+      background: #1c1c1c;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(255, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+      margin-bottom: 20px;
+      border: 2px solid transparent;
+      box-sizing: border-box;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 24px rgba(230, 57, 70, 0.4);
+      border: 2px solid #e63946;
+    }
+
+    .feature-card h3 {
+      color: #e63946;
+      margin-bottom: 15px;
+    }
+
+    .feature-card p {
+      color: #ccc;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    
+
+    @media (max-width: 600px) {
+      .why-choose-us h2 {
+        font-size: 2rem;
+      }
+
+      .features {
+        gap: 20px;
+      }
+
+      .feature-card {
+        padding: 20px;
+      }
+    }
+  
 .aboutus{
    display: flex;
    width: 100vw;
