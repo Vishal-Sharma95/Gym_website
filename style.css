@@ -123,7 +123,7 @@ padding-right: 10px;
     }
     nav{
         width: 300px;
-        height: 500px;
+       padding: 20px;
         position: fixed;
         top: 0;
         right: 0;
@@ -270,7 +270,7 @@ padding-right: 10px;
       box-shadow: 0 6px 20px rgba(255, 0, 0, 0.1);
       transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
       margin-bottom: 20px;
-      border: 2px solid transparent;
+      border: 1px solid gray;
       box-sizing: border-box;
     }
 
@@ -287,7 +287,7 @@ padding-right: 10px;
 
     .feature-card p {
       color: #ccc;
-      font-size: 0.95rem;
+      font-size: 1.1rem;
       line-height: 1.6;
     }
     

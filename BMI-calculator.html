@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PowerFit Gym | BMI Calculator</title>
+    <link rel="stylesheet" href="BMI-calculator.css">
+    
+</head>
+<body>
+   
+
+    <main class="container">
+        <section class="hero">
+            <h1>BMI CALCULATOR</h1>
+            
+            <p>Calculate your Body Mass Index (BMI) to determine if you're maintaining a healthy weight. This simple assessment can help you understand your body composition and set fitness goals.</p>
+        </section>
+
+        <section class="calculator-section">
+            <h2>Check Your BMI</h2>
+            <div class="calculator-form">
+                <div>
+                    <div class="form-group">
+                        <label for="gender">Gender</label>
+                        <select id="gender">
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="age">Age (years)</label>
+                        <input type="number" id="age" min="18" max="120" placeholder="Enter your age">
+                    </div>
+                </div>
+                <div>
+                    <div class="form-group">
+                        <label for="height">Height (cm)</label>
+                        <input type="number" id="height" min="100" max="250" placeholder="Enter your height">
+                    </div>
+                    <div class="form-group">
+                        <label for="weight">Weight (kg)</label>
+                        <input type="number" id="weight" min="30" max="300" placeholder="Enter your weight">
+                    </div>
+                </div>
+            </div>
+            <button id="calculate-btn" class="btn">Calculate BMI</button>
+            
+            <div id="result" class="result-section">
+                <h3>Your BMI Result</h3>
+                <div id="bmi-value" class="bmi-value">0.0</div>
+                <div id="bmi-category" class="bmi-category">Category</div>
+                
+                <div class="bmi-chart">
+                    <h4>BMI Categories</h4>
+                    <div class="chart-container">
+                        <div class="chart-segment segment-underweight">Underweight</div>
+                        <div class="chart-segment segment-normal">Normal</div>
+                        <div class="chart-segment segment-overweight">Overweight</div>
+                        <div class="chart-segment segment-obese">Obese</div>
+                    </div>
+                    <div class="chart-labels">
+                        <span>16</span>
+                        <span>18.5</span>
+                        <span>25</span>
+                        <span>30</span>
+                        <span>40</span>
+                    </div>
+                    <div id="marker-container" style="position: relative; width: 100%;">
+                        <div id="bmi-marker" class="active-marker" style="display: none;"></div>
+                    </div>
+                </div>
+                
+                <div class="bmi-info">
+                    <p id="bmi-message"></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Titan’s Arena Gym</h3>
+                    <p>Your journey to a healthier lifestyle starts here. Join us and transform your body and mind.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Programs</a></li>
+                        <li><a href="#">Schedule</a></li>
+                        <li><a href="#">Personal Training</a></li>
+                        <li><a href="#">Nutrition</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li>123 Fitness Street</li>
+                        <li>Workout City, WO 12345</li>
+                        <li>Phone: (123) 456-7890</li>
+                        <li>Email: info@powerfit.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 PowerFit Gym. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('calculate-btn').addEventListener('click', function() {
+            calculateBMI();
+        });
+
+        function calculateBMI() {
+            // Get input values
+            const gender = document.getElementById('gender').value;
+            const age = parseFloat(document.getElementById('age').value);
+            const height = parseFloat(document.getElementById('height').value);
+            const weight = parseFloat(document.getElementById('weight').value);
+            
+            // Validate inputs
+            if (!age || !height || !weight) {
+                alert('Please fill all the required fields');
+                return;
+            }
+            
+            if (height <= 0 || weight <= 0 || age <= 0) {
+                alert('Please enter valid values greater than zero');
+                return;
+            }
+            
+            // Calculate BMI: weight (kg) / (height (m))^2
+            const heightInMeters = height / 100;
+            const bmi = weight / (heightInMeters * heightInMeters);
+            const roundedBMI = bmi.toFixed(1);
+            
+            // Determine BMI category
+            let category, categoryClass, message;
+            
+            if (bmi < 18.5) {
+                category = 'Underweight';
+                categoryClass = 'category-underweight';
+                message = 'Your BMI suggests you are underweight. Consider consulting with a nutritionist to develop a healthy weight gain plan.';
+            } else if (bmi >= 18.5 && bmi < 25) {
+                category = 'Normal Weight';
+                categoryClass = 'category-normal';
+                message = 'Congratulations! Your BMI is within the normal range. Maintain your healthy lifestyle with regular exercise and balanced nutrition.';
+            } else if (bmi >= 25 && bmi < 30) {
+                category = 'Overweight';
+                categoryClass = 'category-overweight';
+                message = 'Your BMI suggests you are overweight. Consider incorporating more physical activity and reviewing your diet for healthier choices.';
+            } else {
+                category = 'Obese';
+                categoryClass = 'category-obese';
+                message = 'Your BMI indicates obesity. We recommend consulting with a healthcare professional to develop a personalized weight management plan.';
+            }
+            
+            // Update result
+            document.getElementById('bmi-value').textContent = roundedBMI;
+            
+            const categoryElement = document.getElementById('bmi-category');
+            categoryElement.textContent = category;
+            categoryElement.className = 'bmi-category ' + categoryClass;
+            
+            document.getElementById('bmi-message').textContent = message;
+            
+            // Show result section
+            document.getElementById('result').classList.add('show');
+            
+            // Update marker position
+            updateMarkerPosition(bmi);
+        }
+        
+        function updateMarkerPosition(bmi) {
+            const marker = document.getElementById('bmi-marker');
+            const container = document.getElementById('marker-container');
+            
+            marker.style.display = 'block';
+            
+            // Calculate position percentage based on BMI value
+            // BMI chart ranges from 16 to 40
+            const minBMI = 16;
+            const maxBMI = 40;
+            const clampedBMI = Math.min(Math.max(bmi, minBMI), maxBMI);
+            
+            const positionPercentage = ((clampedBMI - minBMI) / (maxBMI - minBMI)) * 100;
+            marker.style.left = `calc(${positionPercentage}% - 5px)`;
+        }
+    </script>
+</body>
+</html>
