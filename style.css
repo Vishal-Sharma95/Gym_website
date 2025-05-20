@@ -405,7 +405,7 @@ font-family:'Bebas Neue', sans-serif;
 }
 .About a, button{
    width: 250px;
-   border:0.5px solid white;
+   border:0.5px solid transparent;
    margin:0 auto;
    height: 58px;
    color: white;
@@ -631,6 +631,8 @@ iframe{
  footer p{
     color: white;
    margin: 0 auto;
+   font-family:'Bebas Neue', sans-serif;
+   letter-spacing: 1px;
  }
 
  /* Using Media query for other devices to adopt screen sizel; */
